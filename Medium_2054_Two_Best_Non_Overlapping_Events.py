@@ -1,3 +1,11 @@
+# The three methods correspond to functions maxTwoEvents1, maxTwoEvents2, maxTwoEvents3.
+# The first method is sorting + prefix sum + binary search. 
+# The second method is an improvement of the first one.
+# The third method is sort + priority queue. 
+# The original post for the third method is:
+# https://leetcode.cn/problems/two-best-non-overlapping-events/solutions/1075386/yong-you-xian-dui-lie-wei-hu-ling-yi-ge-8ld3x/
+# The author used Go language to write it. 
+# I translate it to python and post here.  
 def maxTwoEvents1(events: list[list[int]]) -> int:
     # Sorting takes O(n*logn) time and O(n) space.
     by_start = sorted(events, key = lambda x:x[0])
