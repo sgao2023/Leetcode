@@ -22,8 +22,10 @@ def increasingTriplet(nums: list[int]) -> bool:
             return True
     return False
 
+# Method 1'. An improvement of method 1: update pre_min when iterate nums, instead of creating a new list.
 def increasingTriplet1(nums: list[int]) -> bool:
     suf_max = [0]*len(nums)
+    #pre_min = [0]*len(nums)
     # for i in range(len(nums)):
     #     if i==0:
     #         pre_min[i] = nums[0]
@@ -42,6 +44,7 @@ def increasingTriplet1(nums: list[int]) -> bool:
     return False
         
 
+# Method 2.
 # The idea is from 'medium 300: Longest Increasing Subsequence'(LIS).
 # There is a way to solve LIS problem with O(n*logn) time complexity. 
 # Here since we only need to find an increasing sequence with length>=3, so the length of g is at most 3. 
