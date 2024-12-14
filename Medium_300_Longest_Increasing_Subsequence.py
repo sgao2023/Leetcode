@@ -1,5 +1,7 @@
 # First method is O(n^2) solution, which is easy to figure out.
-# Second method is from endless_cheng. This is new to me. I should revise this in the future. 
+# Second method is from endless_cheng. Original post:
+# https://leetcode.cn/problems/longest-increasing-subsequence/solutions/2147040/jiao-ni-yi-bu-bu-si-kao-dpfu-o1-kong-jia-4zma/
+# This is new to me. I should revise this in the future. 
 # The further improvement changes nums in-place, which is understandable to me, but hard to memorize. 
 
 # DP O(n^2) solution.

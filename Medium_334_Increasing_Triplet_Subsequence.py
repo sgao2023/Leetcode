@@ -51,6 +51,7 @@ def increasingTriplet1(nums: list[int]) -> bool:
 # Therefore, its time complexity is O(n*log3)~O(1).
 # Reference:
 # https://leetcode.cn/problems/longest-increasing-subsequence/solutions/2147040/jiao-ni-yi-bu-bu-si-kao-dpfu-o1-kong-jia-4zma/
+
 def increasingTriplet2(nums: list[int]) -> bool:
     def lower_bound(arr,target):
         left,right = -1,len(arr)
@@ -76,6 +77,24 @@ def increasingTriplet2(nums: list[int]) -> bool:
     
     return False
 
+# Method 2'. 
+# Since g containus at most 3 elements, we don't need to use binary search to find the index to operate.
+# We can further simplify the above code as follows:
+
+def increasingTriplet3(nums: list[int]) -> bool:
+    # While iterating numbers in nums, 
+    # we update g[i] as the minimal possible ending element 
+    # of all increasing sequence with length == i+1.
+    # Terminate the loop once we've found g[2].
+    # (means that we find an increasing sequence with length == 3.) 
+    g=[nums[0]]
+    for x in nums:
+        if x<=g[0]: g[0] = x
+        elif len(g) == 1: g.append(x)
+        elif x<=g[1]: g[1] = x
+        else: return True
+    return False
+
 nums_list = [[1,2,3,4,5],[5,4,3,2,1],[2,1,5,0,4,6]]
 for nums in nums_list:
-    print(increasingTriplet(nums),increasingTriplet1(nums),increasingTriplet2(nums))
+    print(increasingTriplet(nums),increasingTriplet1(nums),increasingTriplet2(nums),increasingTriplet3(nums))
