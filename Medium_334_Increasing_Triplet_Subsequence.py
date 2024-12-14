@@ -78,7 +78,7 @@ def increasingTriplet2(nums: list[int]) -> bool:
     return False
 
 # Method 2'. 
-# Since g containus at most 3 elements, we don't need to use binary search to find the index to operate.
+# Since g contains at most 3 elements, we don't need to use binary search to find the index to operate.
 # We can further simplify the above code as follows:
 
 def increasingTriplet3(nums: list[int]) -> bool:
