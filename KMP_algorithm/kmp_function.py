@@ -1,3 +1,5 @@
+# The kmp function is from the following post:
+# https://leetcode.cn/problems/find-beautiful-indices-in-the-given-array-ii/solutions/2603695/kmper-fen-cha-zhao-by-endlesscheng-7bjm/
 def kmp(text: str, pattern: str) -> list[int]:
     m = len(pattern)
     pi = [0] * m
