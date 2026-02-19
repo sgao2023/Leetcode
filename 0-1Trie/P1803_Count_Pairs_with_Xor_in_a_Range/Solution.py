@@ -1,10 +1,3 @@
-# 0-1 Trie 模板
-# 可以解决数组中两数最大异或和，或者异或和在某个范围内的数对个数等问题
-# 区间最大异或和可以转化成前缀和，本质也是两数最大异或和问题
-# 求最大异或和使用max_xor
-# 求最大异或和至少为 target 使用count_at_least
-# 求最大异或和在low和high之间，等价于 count_at_least(val, low) - count_at_least(val, high + 1)
-
 class Node:
     __slots__ = 'children', 'cnt'
 
@@ -95,3 +88,17 @@ class Trie:
 # 链接：https://leetcode.cn/problems/maximum-strong-pair-xor-ii/solutions/2523213/0-1-trie-hua-dong-chuang-kou-pythonjavac-gvv2/
 # 来源：力扣（LeetCode）
 # 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
+
+class Solution:
+    def countPairs(self, nums: List[int], low: int, high: int) -> int:
+        ans = 0
+        t = Trie()
+        t.insert(nums[0])
+        for i, x in enumerate(nums):
+            if i == 0:
+                continue
+            cnt1 = t.count_at_least(x, low)
+            cnt2 = t.count_at_least(x, high + 1)
+            ans += cnt1 - cnt2
+            t.insert(x)
+        return ans
