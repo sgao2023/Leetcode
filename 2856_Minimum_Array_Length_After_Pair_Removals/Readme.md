@@ -1,6 +1,6 @@
 # Idea:
 
-Suppose that in Counter(nums) sorted by frequency values, we have a_1 with multiplicity f_1, a_2 with mult'y f_2, ... , a_k with mult'y f_k, where f_1 < f_2 < ... < f_k.
+Suppose that in Counter(nums) sorted by frequency values, we have a_1 with multiplicity f_1, a_2 with mult'y f_2, ... , a_k with mult'y f_k, where f_1 <= f_2 <= ... <= f_k.
 
 Case 1. f_k >= (f_1 + ... + f_(k-1))
 
