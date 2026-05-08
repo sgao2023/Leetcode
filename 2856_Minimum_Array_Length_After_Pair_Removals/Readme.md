@@ -14,7 +14,8 @@ The minimum length of nums after applying the operateion zero or more times is l
 
 Proof: Use math induction on diff := (f_1 + ... + f_(k-1)) - f_k. 
 I present the case for len(nums) is even. (Proof of odd case is similar.) 
-Prove for diff == 2: Take any two indices i and j, remove the pair (a_i, a_j). Then the new_diff == old_diff - 2 = 0. Now we go back to the above Case 1. 
-Suppose that the claim is true for all diff <= 2 * k and diff == even. Now we look at diff == 2 * (k+1). Again, cancel a pair (a_i, a_j), we get a new_diff == old_diff - 2. Now we can use our hypothesis for diff <= 2 * k. 
+Prove for diff == 2: Take any two indices i and j, remove the pair (a_i, a_j). Then the new_diff == old_diff - 2 = 0. Then by the above Case 1, finally there's nothing left.
+
+Suppose that the claim is true for all even diff <= 2 * k. Now we look at diff == 2 * (k+1). Again, cancel a pair (a_i, a_j), we get a new_diff == old_diff - 2. Now we can use our hypothesis for diff <= 2 * k. 
 
 Q.E.D.
