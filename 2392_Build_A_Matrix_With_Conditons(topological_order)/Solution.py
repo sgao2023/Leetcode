@@ -1,3 +1,4 @@
+# https://leetcode.com/problems/build-a-matrix-with-conditions/description/
 class Solution:
     def buildMatrix(
         self, k: int, rowConditions: List[List[int]], colConditions: List[List[int]]
